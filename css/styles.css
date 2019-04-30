@@ -1,0 +1,482 @@
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /**reset para rems --62.5% =10px
+    rems unidad de medida para todas las pantallas*/
+}
+
+*,*:before, *:after{
+ box-sizing: inherit;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*Globales*/
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3.0rem;
+}
+h4{
+    font-size: 2.6rem;
+} 
+
+p{
+    font-size: 1.3rem;
+}
+
+/*botones*/
+/*los enlaces tienen un display inline, 
+lo cual no permite que se le de ancho
+es recomendable usar inline-block*/
+
+.botones{
+   display: inline-block;
+   color: white;
+   font-weight: 700; 
+   text-decoration: none;
+   font-size: 1.8rem;display: inline-block;
+   color: white;
+   font-weight: 700; 
+   text-decoration: none;
+   font-size: 1.8rem;
+   padding: 1rem 3rem;
+   margin: 3rem;
+   
+   text-align: center
+}
+
+.boton-amarrillo{
+ background-color: #e08709;
+}
+.boton-verde{
+    background-color: #71b100;
+}
+
+/*utilidades*/ 
+
+.d-block{
+    display: block!important;
+}
+
+
+.fw-900{
+    font-weight: 900;
+}
+
+.fw-600{
+    font-weight: 600
+}
+
+.fw-400{
+    font-weight: 400;
+}
+
+.fw-300{
+    font-weight: 300;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.container{
+    max-width: 100rem;
+    margin: 0 auto;
+   }
+
+.seccion{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contenido-centrado{
+    max-width: 75rem;
+}
+
+.encabezado-index{
+       font-weight: 600;
+   }
+
+.side-header{
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
+
+/*header     vh, altura de pantalla */
+.sideheader.inicio{
+    height: 100vh;
+    min-height: 60rem;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../img/header.jpg)
+    
+}
+
+/* con dysplay flex. solo sleccionamos el class que deseamos
+flexbox, modo de posicionamiento  lo usaremos con css grid
+con  space-between creamos un espacio entre los elementos de la clase
+align-items: center alineamos los elementos
+ */ 
+
+ .contenido-header{
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     
+ }
+
+ .contenido-header h1{
+     color: #fff;
+     padding-bottom: 2rem;
+     max-width: 75rem;
+     line-height: 5rem;
+ }
+
+.barra{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+    align-items: center;
+}
+
+/*con esta forma, seleccionamos la clase y los hijos de la misma */ 
+.navegacion a{
+    color: white;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-size: 2rem; /*20 px*/ 
+}
+
+.navegacion a:hover{
+    color: #8AFFF1;
+}
+
+/*con este elemento selecioamos el ultimo elemento*/ 
+.navegacion a:last-of-type{
+    margin-right: 0;
+}
+
+/* Mas sobre nosotros*/ 
+
+
+
+.iconosnosotros{
+  display: flex;  
+  justify-content: space-between;
+}
+
+/*al usar flexbox debes usar flex-basis. respecto al diseño responsive. es necesario usar %
+em este caso al ser tres, era 33.3%*/
+
+.icono{
+    flex-basis: calc(33.3% - 1rem);
+    text-align: center;
+}
+
+/*text-transform, nos ayuda a modificar entre mayusculas y minusculas
+lowercase todas minusculas.*/
+.icono h3{
+    text-transform:uppercase;
+}
+
+
+/*anuncios*/ 
+
+/*flex-grow para que el contenido crezca si es posible, 
+flex shrim paa que crzca si es posible*/
+
+.contenedor-anuncios{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.anuncio{
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;
+    
+}
+
+.contenido-anuncio{
+    padding: 2rem;
+}
+
+.contenido-anuncio h3{
+    margin: 0;
+    font-weight: 300;
+}
+
+.iconos-caracteristicas{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    max-width: 50rem;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.iconos-caracteristicas li{
+  
+    display: flex;
+}
+
+.iconos-caracteristicas li img{
+    margin-right: 2rem;
+}
+
+
+.precio{
+    color: #71b100;
+    
+}
+
+/*boton ver todos*/
+
+.ver-todas{
+    display:flex;
+    justify-content: center;
+}
+
+/*imagen contacto*/
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position:center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.contenido-contacto{
+    flex: 1;
+    color: white
+}
+
+.contenido-contacto p{
+    font-size: 1.6rem 
+}
+
+/*seccion inferior*/
+
+.seccion-inferior{
+     display: flex;
+     justify-content: space-between;
+}
+   /*al seleccionar clases hijo de una clase padre, es necesario separarlas*/ 
+.seccion-inferior .blog{
+    flex-basis: 60%;
+}
+
+.seccion-inferior .testimonio{
+    flex-basis: calc(40% - 2rem);
+    }
+
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.entrada-blog :last-of-type{
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen{
+    flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada{
+    flex-basis: calc(60% - 3rem);
+}
+
+.texto-entrada h4{
+    margin: 0;
+}
+
+.texto-entrada a{
+    color:black;
+    text-decoration: none;
+}
+
+.testimonio h3{
+    text-transform: capitalize;
+}
+/*seudo elemento no se pueden seleccionar */ 
+
+.texto-entrada h4::after{
+    content: "";
+    display: block;
+    width: 20rem;
+    height: 0.5rem;
+    background-color: #71b100;
+    margin-top: 1rem;
+}
+
+.testimoniales{
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 2rem;
+}
+
+.testimoniales blockquote::before{
+    content: "";
+    background-image: url(../img/comilla.svg);
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    position: absolute;
+    left: -2.7rem;
+    
+}
+/*en ciertos casos, para posicionar un elemento. se usa 
+position. al elemento padre es necesario asignarle relative
+si no se hace, el elemento hijo tomara en cuanta el inicio del sitio*/
+
+.testimoniales blockquote{
+    position: relative;
+    padding-left: 5rem;
+}
+
+.testimoniales p{
+    text-align: end;
+}
+
+
+/*footer*/ 
+
+.site-footer{
+    background-color:#333333; 
+    margin: 0;
+}
+
+.contenedor-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+
+.derecho-autor{
+    margin: 0;
+    color: #fff
+}
+
+
+
+
+/****   PAGINAS INTERNAS ****/
+/*grid es uno de los estandar con flexbox.
+con grid se usan columnas
+
+en este caso estamos dividiendo el area en dos. una para cada etiqueta hijo 
+en este caso space no funciona*/
+
+/*nosotros*/
+.contenido-nosotros{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 2rem;
+}
+
+.blo-experiencia{
+    text-align: start;
+    font-size: 2rem;
+    margin: 0;
+    padding:  4rem 0;
+}
+
+
+/*anuncio*/
+
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*contacto*/ 
+
+legend{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+label{
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/*para seleccionar todos los inputs de un formulario menos uno 
+se puede seleccionar*/
+
+.contacto p{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.forma-contacto{
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+input:not([type="radio"]){
+    width: auto;
+}
+
+input:not([type="submit"]),
+textarea, 
+select{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+textarea{
+    height: 20rem;
+}
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.enviar{
+    display: inline-block;
+   color: white;
+   font-weight: 700; 
+   text-decoration: none;
+   font-size: 1.8rem;
+   padding:1rem 2rem;
+   border:none;
+   margin-top: 2rem;
+}
+
+/*con esta atributo, hacemos que cuando se posicione el cursor
+sobre el boton de enviar, aparezca una manita*/
+
+.enviar:hover{
+    cursor: pointer;
+}

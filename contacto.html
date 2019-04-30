@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anuncio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="side-header">
+        <div class="container contenido-header">
+            <div class="barra">
+                <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+                <nav class="navegacion">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <h1 class="fw-300 centrar-texto">Contacto</h1>
+
+
+    <img src="img/destacada3.jpg" alt="anuncio">
+
+    <main class="container seccion contenido-centrado">
+        <h2 class="fw-300 centrar-texto">Llena el Formulario de Comntacto</h2>
+
+        <!--para optener los datos en el leguaje de backend. en el caso de radio 
+        y opcion se usa value. en los demas se usan name-->
+        <form action="" class="contacto">
+            <fieldset>
+                <legend>Informacion Personal</legend>
+                <label for="name">Nombre</label>
+                    <input type="text" name="Nombre" placeholder="Tu Nombre" required id="name">
+
+                <label for="email">Correo Electronico</label>
+                    <input type="email" name="email" placeholder="Correo Electronico" required id="email">
+
+                <label for="tele">Telefono</label>
+                    <input type="tel" name="telefono" placeholder="Telefono" required id="tele">
+
+                <label for="mensaje">mensaje</label>
+                <textarea name="mensaje" id="mensaje"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informacion Sobre Propiedad</legend>
+                <label for="opciones">Vende O Compra</label>
+                <select name="opciones" id="opciones">
+                    <option value="" disabled selected>-- Selecciona --</option>
+                    <option value="compra">Compra</option>
+                    <option value="vende">Vende</option>
+                </select>
+
+                <label for="cantidad">Presupuesto</label>
+                <input type="number" name="presupusto" id="cantidad" min="0" placeholder="$300.000.000">
+            </fieldset>
+
+            <fieldset>
+                <legend>Contacto</legend>
+                
+                <p>Como desea ser contactado</p>
+                <div class="forma-contacto">
+                <label for="telefono">Telefono</label>
+                <input type="radio" name="contacto" value="phone"  id="telefono">
+
+                <label for="correoelectronico">Correo Electronico</label>
+                <input type="radio" name="contacto" value="emai" id="correoelectronico">
+                </div>
+
+                <p>Si elegio Telefono, Elija la Fecha y Hora</p>
+                <label for="date">Fecha</label>
+                <input type="date" name="date" id="date">
+
+                <label for="time">Hora</label>
+                <input type="time" name="time" id="time" min="08:00" max="16:00">
+
+                <input type="submit" value="Enviar" class="enviar boton-verde">
+            </fieldset>
+            
+        </form>
+
+
+    </main>
+
+    <footer class="seccion site-footer">
+        <div class="container contenedor-footer">
+            <nav class="navegacion">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+
+            <p class="derecho-autor">Este sitio web es creado por Miguel Bravo, Todos los derechos reservados &#169</p>
+        </div>
+    </footer>
+</body>
+
+</html>
