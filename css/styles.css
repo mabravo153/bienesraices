@@ -1,4 +1,4 @@
-
+﻿
 html{
     box-sizing: border-box;
     font-size: 62.5%; /**reset para rems --62.5% =10px
@@ -42,19 +42,22 @@ lo cual no permite que se le de ancho
 es recomendable usar inline-block*/
 
 .botones{
-   display: inline-block;
-   color: white;
-   font-weight: 700; 
-   text-decoration: none;
-   font-size: 1.8rem;display: inline-block;
-   color: white;
-   font-weight: 700; 
-   text-decoration: none;
-   font-size: 1.8rem;
-   padding: 1rem 3rem;
-   margin: 3rem;
-   
-   text-align: center
+display: block;
+color: white;
+font-weight: 700; 
+text-decoration: none;
+font-size: 1.8rem;
+padding: 1rem 3rem;
+margin: 3rem;
+flex 0 0 100%;
+text-align: center
+}
+
+@media (min-width: 768px) {
+    .botones{
+        display: inline-block;
+        flex 0 0 auto;
+    }
 }
 
 .boton-amarrillo{
@@ -92,6 +95,7 @@ es recomendable usar inline-block*/
 }
 
 .container{
+    width: 90%;
     max-width: 100rem;
     margin: 0 auto;
    }
@@ -136,7 +140,14 @@ align-items: center alineamos los elementos
      display: flex;
      flex-direction: column;
      justify-content: space-between;
+     text-align: center;
      
+ }
+
+ @media (min-width: 768px) {
+    .contenido-header{
+        text-align: left;
+    }
  }
 
  .contenido-header h1{
@@ -146,45 +157,67 @@ align-items: center alineamos los elementos
      line-height: 5rem;
  }
 
+ @media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+ }
 .barra{
-    display: flex;
-    justify-content: space-between;
     padding-top: 3rem;
-    align-items: center;
 }
 
 /*con esta forma, seleccionamos la clase y los hijos de la misma */ 
 .navegacion a{
     color: white;
     text-decoration: none;
-    margin-right: 2rem;
-    font-size: 2rem; /*20 px*/ 
+    font-size: 2.5rem; 
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline-block;
+        margin-right: 2rem;
+        font-size: 2rem; 
+    }
+
+    /*con este elemento selecioamos el ultimo elemento*/ 
+.navegacion a:last-of-type{
+    margin-right: 0;
+}
 }
 
 .navegacion a:hover{
     color: #8AFFF1;
 }
 
-/*con este elemento selecioamos el ultimo elemento*/ 
-.navegacion a:last-of-type{
-    margin-right: 0;
-}
+
 
 /* Mas sobre nosotros*/ 
 
-
-
-.iconosnosotros{
-  display: flex;  
-  justify-content: space-between;
+@media (min-width: 768px ) {
+    .iconosnosotros{
+        display: flex;  
+        justify-content: space-between;
+      }
 }
+
+
 
 /*al usar flexbox debes usar flex-basis. respecto al diseño responsive. es necesario usar %
 em este caso al ser tres, era 33.3%*/
 
 .icono{
-    flex-basis: calc(33.3% - 1rem);
     text-align: center;
+}
+
+@media (min-width: 768px) {
+ .icono{
+    flex-basis: calc(33.3% - 1rem);
+ }   
 }
 
 /*text-transform, nos ayuda a modificar entre mayusculas y minusculas
@@ -199,18 +232,24 @@ lowercase todas minusculas.*/
 /*flex-grow para que el contenido crezca si es posible, 
 flex shrim paa que crzca si es posible*/
 
-.contenedor-anuncios{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+@media (min-width:768px ) {
+    .contenedor-anuncios{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }  
 }
 
-.anuncio{
+@media (min-width: 768px) {
+   .anuncio{
     flex-basis: calc(33.3% - 1rem);
+   } 
+}  
+
+.anuncio{
     border: 1px solid #b5b5b5;
     background-color: #f5f5f5;
-    margin-bottom: 2rem;
-    
+    margin-bottom: 2rem; 
 }
 
 .contenido-anuncio{
@@ -265,7 +304,7 @@ flex shrim paa que crzca si es posible*/
 
 
 .contenido-contacto{
-    flex: 1;
+    flex: 0 0 95%;
     color: white
 }
 
@@ -276,17 +315,26 @@ flex shrim paa que crzca si es posible*/
 /*seccion inferior*/
 
 .seccion-inferior{
-     display: flex;
-     justify-content: space-between;
+    margin-bottom: 2rem;
 }
-   /*al seleccionar clases hijo de una clase padre, es necesario separarlas*/ 
-.seccion-inferior .blog{
+
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+   }
+
+    .seccion-inferior .blog{
     flex-basis: 60%;
 }
 
-.seccion-inferior .testimonio{
+    .seccion-inferior .testimonio{
     flex-basis: calc(40% - 2rem);
     }
+
+}
+
+   /*al seleccionar clases hijo de una clase padre, es necesario separarlas*/ 
 
 .entrada-blog{
     display: flex;
@@ -368,10 +416,19 @@ si no se hace, el elemento hijo tomara en cuanta el inicio del sitio*/
 }
 
 .contenedor-footer{
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem 0;
+    text-align: center;
 }
+
+@media (min-width: 768px) {
+    .contenedor-footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 0
+    }
+}
+
+
+
 
 .derecho-autor{
     margin: 0;
@@ -479,4 +536,4 @@ sobre el boton de enviar, aparezca una manita*/
 
 .enviar:hover{
     cursor: pointer;
-}
+} 
